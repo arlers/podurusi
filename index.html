@@ -50,7 +50,27 @@
 
     .cat-drawing:hover {
       transform: scale(1.1) rotate(-5deg);
-    } 
+    }
+        .cat-drawing:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    /* Стили для второго котика */
+    .cat-drawing-right {
+      position: fixed;
+      bottom: 20px;   /* 20 пикселей от низа */
+      right: 20px;    /* 20 пикселей от правого края */
+      width: 120px;
+      height: 120px;
+      z-index: 10;
+      transition: transform 0.3s ease;
+    }
+
+    /* Второй котик тоже будет увеличиваться при наведении */
+    .cat-drawing-right:hover {
+      transform: scale(1.1) rotate(5deg); /* Наклоняем в другую сторону */
+    }
+</style>
   </style>
 </head>
 <body>
@@ -66,6 +86,26 @@
     <!-- Глазки -->
     <circle cx="38" cy="50" r="4" fill="#1a1a1a" />
     <circle cx="62" cy="50" r="4" fill="#1a1a1a" />
+    <!-- Носик -->
+    <polygon points="47,60 53,60 50,64" fill="#1a1a1a" />
+    <!-- Ротик (две дуги) -->
+    <path d="M 40 68 Q 45 75 50 64 Q 55 75 60 68" stroke="#1a1a1a" stroke-width="2" fill="transparent" />
+    <!-- Усы -->
+    <line x1="20" y1="60" x2="35" y2="62" stroke="#1a1a1a" stroke-width="1.5" />
+    <line x1="20" y1="68" x2="35" y2="66" stroke="#1a1a1a" stroke-width="1.5" />
+    <line x1="80" y1="60" x2="65" y2="62" stroke="#1a1a1a" stroke-width="1.5" />
+    <line x1="80" y1="68" x2="65" y2="66" stroke="#1a1a1a" stroke-width="1.5" />
+  </svg>
+    <!-- Второй котик -->
+  <svg class="cat-drawing-right" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Уши -->
+    <polygon points="20,40 35,10 50,35" fill="#aec6cf" />
+    <polygon points="80,40 65,10 50,35" fill="#aec6cf" />
+    <!-- Голова -->
+    <circle cx="50" cy="55" r="30" fill="#aec6cf" />
+    <!-- Глазки (закрытые, как будто спит) -->
+    <path d="M 32 50 Q 38 45 44 50" stroke="#1a1a1a" stroke-width="2" fill="transparent" />
+    <path d="M 56 50 Q 62 45 68 50" stroke="#1a1a1a" stroke-width="2" fill="transparent" />
     <!-- Носик -->
     <polygon points="47,60 53,60 50,64" fill="#1a1a1a" />
     <!-- Ротик (две дуги) -->
